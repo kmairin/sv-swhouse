@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Thai Software Projects Fail &mdash; SV Software House</title>
+  <meta name="description" content="The patterns we've seen across dozens of failed projects, and the checklist that would have prevented them.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Why Thai Software Projects Fail &mdash; And How to Spot a Good Vendor">
+  <meta property="og:description" content="The patterns we've seen across dozens of failed projects, and the checklist that would have prevented them.">
+  <meta property="og:type" content="article">
+
+  <!-- Preload critical font -->
+  <link rel="preload" href="../assets/fonts/ClashDisplay-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="../" class="nav__logo">SV SOFTWARE HOUSE</a>
+      <nav class="nav__links" id="nav-links">
+        <a href="../#software" class="nav__link">Software</a>
+        <a href="../#education" class="nav__link">Education</a>
+        <a href="../#team" class="nav__link">Team</a>
+        <a href="../blog/" class="nav__link">Blog</a>
+        <a href="../#cta" class="nav__link">Contact</a>
+      </nav>
+      <a href="../#cta" class="nav__cta btn btn--primary">Join Waitlist</a>
+      <button class="nav__burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+
+      <div class="article-hero" data-topic="engineering">
+        <div class="article-hero__shapes" aria-hidden="true">
+          <div class="article-hero__circle article-hero__circle--1"></div>
+          <div class="article-hero__circle article-hero__circle--2"></div>
+          <div class="article-hero__line article-hero__line--1"></div>
+          <div class="article-hero__line article-hero__line--2"></div>
+        </div>
+      </div>
+
+      <!-- ========== ARTICLE HEADER ========== -->
+      <header class="article-header">
+        <a href="../blog/" class="article-header__back">&larr; Back to all articles</a>
+        <span class="article-header__tag">Engineering</span>
+        <h1 class="article-header__title">Why Thai Software Projects Fail &mdash; And How to Spot a Good Vendor</h1>
+        <div class="article-header__meta">
+          <div class="article-header__author">
+            <span class="article-header__author-name">SV Software House</span>
+          </div>
+          <span class="article-header__dot">&middot;</span>
+          <time>March 2026</time>
+          <span class="article-header__dot">&middot;</span>
+          <span>8 min read</span>
+        </div>
+      </header>
+
+      <!-- ========== ARTICLE BODY ========== -->
+      <div class="article-body">
+
+        <p>
+          You spent &#3647;100,000&mdash;maybe &#3647;500,000&mdash;on a custom software project. It launched late. It ran slow. Within two months, something broke and nobody could fix it. The vendor stopped answering your LINE messages. Sound familiar? We&rsquo;ve reviewed the wreckage of dozens of projects exactly like this. The specifics change. The pattern never does.
+        </p>
+
+        <div class="article-stat">
+          <span class="article-stat__number">&#3647;100K+</span>
+          <span class="article-stat__label">Spent on projects that broke within months. The pattern is always the same &mdash; and entirely preventable.</span>
+        </div>
+
+        <!-- ======== SECTION: The Pattern ======== -->
+        <h2>The Pattern We Keep Seeing</h2>
+
+        <p>
+          Most Thai dev shops optimize for one thing: speed to invoice. Get the contract signed, build something that looks done, collect payment, move on. The result is software that passes a five-minute demo but collapses under real-world use.
+        </p>
+
+        <p>
+          Here&rsquo;s what we find when we open the hood on these projects:
+        </p>
+
+        <ul>
+          <li><strong>No architecture planning.</strong> Nobody drew a system diagram before writing the first line of code. The database schema was made up on the fly. There&rsquo;s no separation of concerns, no API design, no thought about what happens when your user base grows from 50 to 5,000.</li>
+          <li><strong>No code review.</strong> One developer wrote it. Nobody else looked at it. No pull requests, no second pair of eyes, no quality gate. If that developer leaves, everything they knew walks out the door with them.</li>
+          <li><strong>Copy-paste engineering.</strong> Entire blocks of code lifted from Stack Overflow or tutorial projects without understanding what they do or why. It works until it doesn&rsquo;t&mdash;and when it breaks, nobody can debug it because nobody wrote it.</li>
+          <li><strong>No tests.</strong> Zero automated tests. The only testing was a developer clicking through the app and saying &ldquo;looks fine.&rdquo; No unit tests, no integration tests, no end-to-end tests. Every deployment is a gamble.</li>
+          <li><strong>No monitoring or error handling.</strong> When something crashes in production, nobody knows until a customer complains. There are no logs worth reading, no alerts, no dashboards. Errors get swallowed silently. Data gets corrupted without anyone noticing.</li>
+          <li><strong>No documentation.</strong> Not a single README. No API docs. No deployment instructions. The only documentation is in one developer&rsquo;s head&mdash;and they&rsquo;re already on their next contract.</li>
+        </ul>
+
+        <aside class="article-pullquote">
+          <p>&ldquo;It works on my machine&rdquo; is not a deployment strategy. It&rsquo;s a warning sign.</p>
+        </aside>
+
+        <hr class="article-divider">
+
+        <!-- ======== SECTION: Hidden Costs ======== -->
+        <h2>Why It Costs You More Than You Think</h2>
+
+        <p>
+          Bad software doesn&rsquo;t just fail once. It keeps failing&mdash;and each failure extracts a cost that compounds over time, just like financial debt.
+        </p>
+
+        <h3>Every new feature requires rework</h3>
+        <p>
+          Want to add a payment gateway? First, the developer needs to untangle the spaghetti code that handles user sessions. Want to add a dashboard? The database wasn&rsquo;t designed for reporting, so someone needs to restructure the entire data layer. What should be a two-week feature becomes a two-month rewrite. Every. Single. Time.
+        </p>
+
+        <h3>Technical debt compounds</h3>
+        <p>
+          A shortcut taken in month one becomes a constraint in month three and a crisis in month six. Bad architectural decisions don&rsquo;t age well. They metastasize. The longer you wait to address them, the more expensive the fix becomes. We&rsquo;ve seen projects where the cost to fix the existing codebase exceeded the cost to rebuild from scratch.
+        </p>
+
+        <h3>Performance that embarrasses your brand</h3>
+        <p>
+          Five-second search times. Pages that load like it&rsquo;s 2005 on a dial-up connection. An API that times out when more than 20 users hit it simultaneously. Your customers notice. They just don&rsquo;t tell you&mdash;they leave.
+        </p>
+
+        <h3>Security vulnerabilities nobody checked for</h3>
+        <p>
+          SQL injection. Exposed API keys. Passwords stored in plain text. User data accessible without authentication. These aren&rsquo;t hypothetical risks&mdash;they&rsquo;re things we&rsquo;ve found in production systems that real Thai businesses were running. One breach can cost more than every baht you&rsquo;ve ever spent on software combined.
+        </p>
+
+        <h3>Good engineers won&rsquo;t touch it</h3>
+        <p>
+          Here&rsquo;s the cost nobody talks about: when you try to hire a competent developer to maintain your system, they take one look at the codebase and decline the job. Talented engineers have options. They won&rsquo;t spend their career untangling someone else&rsquo;s mess. So you&rsquo;re left hiring more of the same developers who created the problem in the first place. The cycle continues.
+        </p>
+
+        <hr class="article-divider">
+
+        <!-- ======== SECTION: The Vendor Checklist ======== -->
+        <h2>The Vendor Checklist</h2>
+
+        <p>
+          Before you sign your next software contract, ask these seven questions. If the vendor can&rsquo;t answer &ldquo;yes&rdquo; to all of them, walk away. The money you save by choosing the cheaper option will be spent three times over on fixes, rewrites, and lost business.
+        </p>
+
+        <div class="article-callout">
+          <h4 class="article-callout__title">7 Questions to Ask Before You Sign</h4>
+          <ol>
+            <li><strong>Do they show you a technical architecture before coding?</strong> A real vendor will present system diagrams, database schemas, and API contracts before writing a single line of code. If they jump straight into development, they&rsquo;re building without a blueprint.</li>
+            <li><strong>Do they write automated tests?</strong> Ask to see their test coverage. Ask what testing framework they use. If they look confused by the question, that tells you everything.</li>
+            <li><strong>Do they use version control with code review?</strong> Every change should go through a pull request. Every pull request should be reviewed by at least one other engineer. If they&rsquo;re pushing directly to production, your system is one bad commit away from disaster.</li>
+            <li><strong>Do they have monitoring and error tracking in production?</strong> Ask what tools they use. Sentry, Datadog, New Relic, even basic CloudWatch&mdash;anything is better than nothing. If they don&rsquo;t monitor production, they don&rsquo;t know when things break.</li>
+            <li><strong>Can they explain their tech stack choices and why?</strong> &ldquo;We always use [framework X]&rdquo; is not a good answer. A competent team chooses tools based on your specific requirements&mdash;scale, performance, team familiarity, ecosystem maturity.</li>
+            <li><strong>Do they provide documentation?</strong> API documentation. Deployment runbooks. System architecture docs. If they can&rsquo;t document it, they can&rsquo;t maintain it&mdash;and neither can anyone else.</li>
+            <li><strong>Do they have a maintenance plan after launch?</strong> Software doesn&rsquo;t end at deployment. Dependencies need updates. Security patches need applying. Performance needs monitoring. Ask what happens after launch day. If the answer is &ldquo;we can discuss that later,&rdquo; they&rsquo;re planning to disappear.</li>
+          </ol>
+        </div>
+
+        <hr class="article-divider">
+
+        <!-- ======== SECTION: What Good Looks Like ======== -->
+        <h2>What Good Looks Like</h2>
+
+        <p>
+          At Silicon Valley&rsquo;s top companies&mdash;Amazon, Google, Meta, Stripe&mdash;software isn&rsquo;t built by heroic individuals pulling all-nighters. It&rsquo;s built by disciplined teams following rigorous processes. The result isn&rsquo;t just better code. It&rsquo;s software that works reliably for years, scales without rewriting, and can be maintained by any competent engineer who picks it up.
+        </p>
+
+        <p>
+          Here&rsquo;s what that process looks like:
+        </p>
+
+        <ul>
+          <li><strong>CI/CD pipelines.</strong> Every code change is automatically built, tested, and deployed through a pipeline. No manual deployments. No &ldquo;it worked on my laptop.&rdquo; If the tests fail, the code doesn&rsquo;t ship. Period.</li>
+          <li><strong>Mandatory code reviews.</strong> Every pull request is reviewed by at least one senior engineer. This catches bugs, enforces standards, and spreads knowledge across the team. No single point of failure.</li>
+          <li><strong>Automated testing at every layer.</strong> Unit tests for individual functions. Integration tests for API endpoints. End-to-end tests for critical user flows. The test suite runs on every commit. Bugs get caught before users see them.</li>
+          <li><strong>Production monitoring and alerting.</strong> Real-time dashboards showing error rates, latency, and system health. Automated alerts when something goes wrong. On-call rotations so issues are addressed within minutes, not days.</li>
+          <li><strong>Infrastructure as code.</strong> Servers, databases, and networking are defined in code and version-controlled. Environments are reproducible. Disaster recovery is a script, not a prayer.</li>
+        </ul>
+
+        <h3>The 10x engineer is real&mdash;but not how you think</h3>
+
+        <p>
+          The &ldquo;10x engineer&rdquo; isn&rsquo;t someone who types ten times faster. It&rsquo;s an engineer who makes better architectural decisions, writes code that doesn&rsquo;t need to be rewritten, and leverages tools&mdash;including AI&mdash;to eliminate busywork. One great engineer with modern AI tools can produce more reliable output than a team of ten writing copy-paste code. The math is simple: you pay less, you get better software, and it actually works six months from now.
+        </p>
+
+        <p>
+          This is how we build at SV Software House. Not because it&rsquo;s trendy. Because it&rsquo;s the only way that actually works at scale.
+        </p>
+
+        <hr class="article-divider">
+
+        <!-- ======== CLOSING ======== -->
+        <h2>You Deserve Better Than &ldquo;It Works&rdquo;</h2>
+
+        <p>
+          &ldquo;It works&rdquo; is the lowest bar in software engineering. Your business deserves software that <strong>performs</strong>&mdash;search results in milliseconds, not seconds. Software that <strong>scales</strong>&mdash;handling ten thousand users as gracefully as ten. Software that <strong>lasts</strong>&mdash;maintained, monitored, and built on a foundation that won&rsquo;t crack when your business grows.
+        </p>
+
+        <p>
+          Thailand&rsquo;s tech ecosystem is maturing fast. The companies that invest in real engineering now will be the ones that dominate their markets in three years. The ones that keep hiring the cheapest vendor will keep rebuilding the same broken system over and over, wondering why nothing ever works.
+        </p>
+
+        <p>
+          The choice is yours. But now you know what to look for.
+        </p>
+
+      </div>
+
+      <!-- ========== ARTICLE FOOTER ========== -->
+      <footer class="article-footer">
+        <div class="article-footer__cta">
+          <h3>Ready to build something that lasts?</h3>
+          <p>Talk to our team about your next project. Silicon Valley standards, Thailand pricing.</p>
+          <a href="../#cta" class="btn btn--primary">Get in Touch &rarr;</a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="../" class="footer__logo">SV SOFTWARE HOUSE</a>
+          <p class="footer__tagline">Silicon Valley Standards. Built for Thailand.</p>
+        </div>
+        <div class="footer__links">
+          <a href="../#software">Software</a>
+          <a href="../#education">Education</a>
+          <a href="../#team">Team</a>
+          <a href="../blog/">Blog</a>
+          <a href="../#cta">Contact</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Silicon Valley Software House. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

@@ -576,6 +576,10 @@ ul, ol { list-style: none; }
   background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
 }
 
+.software__block--consulting::before {
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
 .software__title {
   font-family: var(--font-display);
   font-weight: 700;
@@ -784,14 +788,7 @@ ul, ol { list-style: none; }
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--color-bg);
+  object-fit: cover;
   margin-bottom: var(--space-sm);
 }
 
