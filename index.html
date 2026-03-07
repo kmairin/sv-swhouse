@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silicon Valley Software House — Silicon Valley Standards. Built for Thailand.</title>
+  <meta name="description" content="A team of Silicon Valley engineers from Amazon, Google, Robinhood, and OpenAI — returning home to raise Thailand's technology standard through world-class software and education.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Silicon Valley Software House">
+  <meta property="og:description" content="Silicon Valley Standards. Built for Thailand.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+
+  <!-- Preload critical font -->
+  <link rel="preload" href="assets/fonts/ClashDisplay-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#" class="nav__logo">SV SOFTWARE HOUSE</a>
+      <nav class="nav__links" id="nav-links">
+        <a href="#software" class="nav__link">Software</a>
+        <a href="#education" class="nav__link">Education</a>
+        <a href="#team" class="nav__link">Team</a>
+        <a href="#blog" class="nav__link">Blog</a>
+        <a href="#cta" class="nav__link">Contact</a>
+      </nav>
+      <a href="#cta" class="nav__cta btn btn--primary">Join Waitlist</a>
+      <button class="nav__burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__blob hero__blob--1"></div>
+        <div class="hero__blob hero__blob--2"></div>
+        <div class="hero__blob hero__blob--3"></div>
+      </div>
+      <div class="hero__content container">
+        <span class="hero__eyebrow">Silicon Valley &times; Thailand</span>
+        <h1 class="hero__title">
+          <span class="hero__title-line">We Came Back</span>
+          <span class="hero__title-line">To Build Thailand</span>
+          <span class="hero__title-line hero__title-line--accent">Different.</span>
+        </h1>
+        <p class="hero__subtitle">
+          A team of Silicon Valley engineers and designers &mdash; from Amazon, Google,
+          Robinhood, OpenAI &mdash; returning home to raise Thailand's technology standard.
+        </p>
+        <div class="hero__ctas">
+          <a href="#cta" class="btn btn--primary">Join the Waitlist</a>
+          <a href="#software" class="btn btn--ghost">See What We Build &rarr;</a>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span>scroll to explore</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ========== CREDIBILITY BAR ========== -->
+    <section class="credibility" id="credibility">
+      <div class="container">
+        <div class="credibility__row">
+          <span class="credibility__label">Our founders and their extended team have shipped products at</span>
+          <div class="credibility__logos">
+            <img class="credibility__logo-img credibility__logo-img--raw" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazon.svg" alt="Amazon" height="22" loading="lazy">
+            <img class="credibility__logo-img" src="https://cdn.simpleicons.org/google/ffffff" alt="Google" height="22" loading="lazy">
+            <img class="credibility__logo-img" src="https://cdn.simpleicons.org/meta/ffffff" alt="Meta" height="22" loading="lazy">
+            <img class="credibility__logo-img" src="https://cdn.simpleicons.org/robinhood/ffffff" alt="Robinhood" height="22" loading="lazy">
+            <img class="credibility__logo-img" src="https://cdn.simpleicons.org/databricks/ffffff" alt="Databricks" height="22" loading="lazy">
+            <img class="credibility__logo-img credibility__logo-img--raw" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" alt="OpenAI" height="22" loading="lazy">
+            <img class="credibility__logo-img" src="https://cdn.simpleicons.org/instacart/ffffff" alt="Instacart" height="22" loading="lazy">
+            <span class="credibility__logo">JP Morgan</span>
+          </div>
+        </div>
+        <div class="credibility__divider"></div>
+        <div class="credibility__row">
+          <span class="credibility__label">Educated at</span>
+          <div class="credibility__logos">
+            <span class="credibility__logo">MIT</span>
+            <span class="credibility__logo">Stanford</span>
+            <span class="credibility__logo">UC Berkeley</span>
+            <span class="credibility__logo">Harvard</span>
+            <span class="credibility__logo">Johns Hopkins</span>
+            <span class="credibility__logo">UC Irvine</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROBLEM (Sticky Scroll) ========== -->
+    <section class="problem" id="problem">
+      <div class="problem__inner container">
+        <div class="problem__left">
+          <span class="section-label reveal">The Problem We're Solving</span>
+          <h2 class="problem__heading reveal">Thailand deserves better than this.</h2>
+        </div>
+        <div class="problem__right">
+          <div class="problem__card" data-slide="0">
+            <span class="problem__icon">&#x1F9E9;</span>
+            <h3 class="problem__card-title">You paid &#3647;100,000+ for a product that broke in month two.</h3>
+            <p class="problem__card-body">
+              A search that takes 5 seconds. A landing page that loads like it's on dial-up.
+              No monitoring, no error handling, no documentation. The dev shop wrapped it up,
+              got paid, and moved on &mdash; leaving you with spaghetti code that nobody
+              wants to touch. Every new feature costs another &#3647;10,000 and three weeks.
+              This is the Thai dev shop standard. We refuse to accept it.
+            </p>
+          </div>
+          <div class="problem__card" data-slide="1">
+            <span class="problem__icon">&#x26A1;</span>
+            <h3 class="problem__card-title">Good software doesn't have to cost a fortune.</h3>
+            <p class="problem__card-body">
+              Silicon Valley engineers aren't expensive because they're slow &mdash;
+              they're worth it because they build things once, correctly. One 10x engineer
+              with AI replaces a team of ten writing spaghetti code. Lower cost, fewer bugs,
+              near-zero maintenance. You stop paying to fix &mdash; you start paying to grow.
+            </p>
+          </div>
+          <div class="problem__card" data-slide="2">
+            <span class="problem__icon">&#x1F393;</span>
+            <h3 class="problem__card-title">Thailand's education system is 18 years behind the world.</h3>
+            <p class="problem__card-body">
+              The national curriculum hasn't been updated since 2008. Students memorize
+              formulas they'll never use &mdash; when was the last time you solved a quadratic equation
+              at work? Meanwhile the world runs on AI, data, and systems thinking.
+              We teach what actually matters: real tools, real projects, real results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SOFTWARE PRODUCTION ========== -->
+    <section class="software" id="software">
+      <div class="container">
+        <span class="section-label reveal">Software Production</span>
+        <div class="software__block reveal">
+          <div class="software__content">
+            <h2 class="software__title">We Build Products That Don't Embarrass You.</h2>
+            <p class="software__subtitle">Silicon Valley engineering. Thailand pricing.</p>
+            <p class="software__body">
+              We are not a typical Thai dev shop. We are a product engineering firm
+              that operates the way the world's best technology companies do &mdash;
+              with architecture that scales, code that's reviewed, systems that are monitored,
+              and teams that communicate clearly.
+            </p>
+            <p class="software__body">
+              Every project we take is a long-term relationship, not a one-time handoff.
+            </p>
+            <ul class="software__list">
+              <li>&rarr; Web &amp; mobile applications</li>
+              <li>&rarr; Enterprise platforms &amp; internal tools</li>
+              <li>&rarr; AI-integrated products</li>
+              <li>&rarr; Government &amp; high-reliability systems</li>
+              <li>&rarr; Technical audits &amp; rescue projects</li>
+            </ul>
+            <a href="#cta" class="btn btn--primary software__cta">Start a Project &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION ACADEMY ========== -->
+    <section class="education" id="education">
+      <div class="container">
+        <span class="section-label reveal">Education Academy</span>
+        <h2 class="education__title reveal">We Teach Thailand to Think Like Silicon Valley.</h2>
+        <p class="education__subtitle reveal">
+          The most powerful thing we can give Thailand isn't code.
+          It's the mindset, the methods, and the standards that the world's
+          best technology companies run on.
+        </p>
+        <div class="education__grid">
+
+          <div class="education__card reveal">
+            <span class="education__tag">For Executives &amp; Business Owners</span>
+            <h3 class="education__card-title">Lead Technology. Don't Just Buy It.</h3>
+            <p class="education__card-body">
+              Learn to build, manage, and evaluate IT teams with Silicon Valley standards.
+              Understand AI strategy, make data-driven decisions, and run your company with
+              the operational efficiency of a world-class tech company &mdash; without writing
+              a single line of code.
+            </p>
+            <a href="#cta" class="education__link">Join Waitlist &rarr;</a>
+          </div>
+
+          <div class="education__card reveal">
+            <span class="education__tag">For Career Changers</span>
+            <h3 class="education__card-title">Build With AI. Get Hired.</h3>
+            <p class="education__card-body">
+              The tech industry's biggest shift is happening right now &mdash; and it's creating
+              opportunities for people who know how to build with AI. We don't just teach you
+              to code. We teach you to ship, to think in systems, and to stand out in a market
+              that's hungry for builders.
+            </p>
+            <a href="#cta" class="education__link">Join Waitlist &rarr;</a>
+          </div>
+
+          <div class="education__card reveal">
+            <span class="education__tag">For Kids &amp; Teens (ages 8&ndash;18)</span>
+            <h3 class="education__card-title">The Head Start That Changes Everything.</h3>
+            <p class="education__card-body">
+              While other kids are memorizing textbooks, yours will be building real projects,
+              thinking in systems, and developing the problem-solving instincts that top
+              universities and Silicon Valley companies look for. Whether they land at Stanford
+              or lead a team at a Thai tech unicorn &mdash; it starts here.
+            </p>
+            <a href="#cta" class="education__link">Learn More &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOUNDER STORY ========== -->
+    <section class="story" id="story">
+      <div class="container">
+        <span class="section-label reveal">Why We're Here</span>
+        <h2 class="story__title reveal">We Had Good Jobs. We Came Home Anyway.</h2>
+        <div class="story__body reveal">
+          <p>
+            We spent over a decade in Silicon Valley. Between us, we built trading platforms
+            that processed millions of transactions a second. We shipped AI features used
+            by tens of millions of people. We worked alongside some of the sharpest engineers
+            and product minds on the planet.
+          </p>
+          <p>
+            And the whole time, we saw the gap widening.
+          </p>
+          <p>
+            Thai businesses &mdash; smart, ambitious, full of potential &mdash; were getting left behind.
+            Not because they lacked intelligence or drive. Because they'd never seen what
+            &ldquo;good&rdquo; actually looks like from the inside.
+          </p>
+          <p>
+            We came back to close that gap. Not with lectures. With a company that proves it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TEAM ========== -->
+    <section class="team" id="team">
+      <div class="container">
+        <span class="section-label reveal">The Team</span>
+        <p class="team__subhead reveal">Not consultants. Operators who've done it at the highest level.</p>
+
+        <div class="team__founders">
+          <div class="team__founder reveal">
+            <div class="team__photo" aria-label="Krairat Mairin">KM</div>
+            <h3 class="team__name">Krairat Mairin</h3>
+            <span class="team__role">Co-Founder &amp; CEO</span>
+            <p class="team__bio">
+              Infrastructure and backend systems engineer with experience building
+              B2B and consumer products at leading tech companies and crypto startups.
+              First 100 engineers at Databricks. Former engineer at Amazon.
+              Johns Hopkins University.
+            </p>
+            <div class="team__logos">
+              <img class="team__logo-img--raw" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazon.svg" alt="Amazon" height="16" loading="lazy">
+              <img src="https://cdn.simpleicons.org/databricks/999999" alt="Databricks" height="16" loading="lazy">
+            </div>
+          </div>
+          <div class="team__founder reveal">
+            <div class="team__photo" aria-label="Charlie Pisuraj">CP</div>
+            <h3 class="team__name">Charlie Pisuraj</h3>
+            <span class="team__role">Co-Founder &amp; CTO</span>
+            <p class="team__bio">
+              Backend infrastructure engineer specialized in building highly scalable systems.
+              Former engineer at Robinhood, Google, and Meta. Led a Thai company's
+              engineering team. UC Irvine.
+            </p>
+            <div class="team__logos">
+              <img src="https://cdn.simpleicons.org/robinhood/999999" alt="Robinhood" height="16" loading="lazy">
+              <img src="https://cdn.simpleicons.org/google/999999" alt="Google" height="16" loading="lazy">
+              <img src="https://cdn.simpleicons.org/meta/999999" alt="Meta" height="16" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="team__wall reveal">
+          <div class="team__wall-row">
+            <span class="team__wall-label">Our founders and their extended team have shipped products at:</span>
+            <div class="team__wall-logos">
+              <img src="https://cdn.simpleicons.org/google/999999" alt="Google" height="18" loading="lazy">
+              <img src="https://cdn.simpleicons.org/meta/999999" alt="Meta" height="18" loading="lazy">
+              <img class="team__logo-img--raw" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" alt="OpenAI" height="18" loading="lazy">
+              <img src="https://cdn.simpleicons.org/instacart/999999" alt="Instacart" height="18" loading="lazy">
+              <span>JP Morgan</span>
+              <img class="team__logo-img--raw" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/amazon.svg" alt="Amazon" height="18" loading="lazy">
+              <img src="https://cdn.simpleicons.org/databricks/999999" alt="Databricks" height="18" loading="lazy">
+              <img src="https://cdn.simpleicons.org/robinhood/999999" alt="Robinhood" height="18" loading="lazy">
+            </div>
+          </div>
+          <div class="team__wall-row">
+            <span class="team__wall-label">Our team studied at:</span>
+            <div class="team__wall-logos">
+              <span>MIT</span><span>Stanford</span><span>UC Berkeley</span>
+              <span>Harvard</span><span>Johns Hopkins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BLOG PREVIEW ========== -->
+    <section class="blog" id="blog">
+      <div class="container">
+        <span class="section-label reveal">Insights</span>
+        <p class="blog__subhead reveal">How we think about technology, business, and building in Thailand.</p>
+        <div class="blog__grid">
+          <article class="blog__card reveal">
+            <span class="blog__tag">Engineering</span>
+            <h3 class="blog__title">Why Thai Software Projects Fail &mdash; And How to Spot a Good Vendor</h3>
+            <p class="blog__excerpt">The patterns we've seen across dozens of failed projects, and the checklist that would have prevented them.</p>
+            <a href="#" class="blog__link">Read More &rarr;</a>
+          </article>
+          <article class="blog__card reveal">
+            <span class="blog__tag">AI &amp; Strategy</span>
+            <h3 class="blog__title">What Every Thai Executive Needs to Know About AI in 2026</h3>
+            <p class="blog__excerpt">It's not about replacing your team. It's about giving them leverage they didn't know existed.</p>
+            <a href="#" class="blog__link">Read More &rarr;</a>
+          </article>
+          <article class="blog__card reveal">
+            <span class="blog__tag">Operations</span>
+            <h3 class="blog__title">How Silicon Valley Runs Standups (And Why Yours Should Too)</h3>
+            <p class="blog__excerpt">The meeting format that keeps billion-dollar teams aligned &mdash; adapted for Thai company culture.</p>
+            <a href="#" class="blog__link">Read More &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EMAIL WAITLIST CTA ========== -->
+    <section class="cta" id="cta">
+      <div class="container">
+        <h2 class="cta__title reveal">Be First. This Is Limited.</h2>
+        <p class="cta__subtitle reveal">
+          Our first executive cohort and software partnerships are limited
+          to 10 clients each. Join the waitlist and we'll reach out personally.
+        </p>
+        <form class="cta__form reveal" id="waitlist-form">
+          <input
+            type="email"
+            class="cta__input"
+            placeholder="your@company.com"
+            required
+            aria-label="Email address"
+          >
+          <button type="submit" class="btn btn--primary cta__btn">Reserve Your Spot</button>
+        </form>
+        <p class="cta__fine-print reveal">No spam. No noise. Just a direct message from us when we're ready for you.</p>
+        <p class="cta__status" id="form-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ========== MISSION ========== -->
+    <section class="mission">
+      <div class="container">
+        <span class="section-label reveal">Our Mission</span>
+        <h2 class="mission__statement reveal">
+          Close the gap between Silicon Valley and Southeast Asia &mdash;
+          <em>until there is no gap.</em>
+        </h2>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo">SV SOFTWARE HOUSE</a>
+          <p class="footer__tagline">Silicon Valley Standards. Built for Thailand.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#software">Software</a>
+          <a href="#education">Education</a>
+          <a href="#team">Team</a>
+          <a href="#blog">Blog</a>
+          <a href="#cta">Contact</a>
+        </div>
+        <div class="footer__social">
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="GitHub">GitHub</a>
+          <a href="#" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Silicon Valley Software House. All rights reserved.</span>
+        <div class="footer__lang">
+          <button class="footer__lang-btn footer__lang-btn--active">EN</button>
+          <span class="footer__lang-sep">|</span>
+          <button class="footer__lang-btn">TH</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script defer src="js/main.js"></script>
+</body>
+</html>
