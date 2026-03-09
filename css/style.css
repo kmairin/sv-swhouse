@@ -1224,27 +1224,35 @@ ul, ol { list-style: none; }
   }
 
   /* Mobile menu open state */
+  .nav.open {
+    height: 100vh;
+    background: var(--color-bg);
+  }
+
+  .nav.open .nav__inner {
+    height: var(--nav-height);
+  }
+
   .nav.open .nav__links {
     display: flex;
     flex-direction: column;
-    position: fixed;
+    align-items: center;
+    position: absolute;
     top: var(--nav-height);
     left: 0;
     right: 0;
-    bottom: 0;
-    background: var(--color-bg);
+    bottom: 5rem;
     padding: var(--space-lg);
     gap: var(--space-md);
-    z-index: 99;
+    justify-content: center;
   }
 
   .nav.open .nav__cta {
     display: inline-flex;
-    position: fixed;
-    bottom: var(--space-lg);
+    position: absolute;
+    bottom: var(--space-xl);
     left: var(--space-md);
     right: var(--space-md);
-    z-index: 99;
     justify-content: center;
   }
 
