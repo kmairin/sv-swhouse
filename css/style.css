@@ -1230,30 +1230,40 @@ ul, ol { list-style: none; }
   }
 
   .nav.open .nav__inner {
-    height: var(--nav-height);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: var(--nav-height) 1fr auto;
+    height: 100%;
+  }
+
+  .nav.open .nav__logo {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: center;
+  }
+
+  .nav.open .nav__burger {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: center;
   }
 
   .nav.open .nav__links {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: var(--nav-height);
-    left: 0;
-    right: 0;
-    bottom: 5rem;
-    padding: var(--space-lg);
-    gap: var(--space-md);
+    grid-row: 2;
+    grid-column: 1 / -1;
     justify-content: center;
+    gap: var(--space-md);
   }
 
   .nav.open .nav__cta {
-    display: inline-flex;
-    position: absolute;
-    bottom: var(--space-xl);
-    left: var(--space-md);
-    right: var(--space-md);
+    display: flex;
+    grid-row: 3;
+    grid-column: 1 / -1;
     justify-content: center;
+    margin: 0 var(--space-md) var(--space-xl);
   }
 
   .nav.open .nav__link {
