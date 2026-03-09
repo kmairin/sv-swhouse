@@ -1256,6 +1256,7 @@ ul, ol { list-style: none; }
     grid-column: 1 / -1;
     justify-content: center;
     gap: var(--space-md);
+    margin-left: 0;
   }
 
   .nav.open .nav__cta {
