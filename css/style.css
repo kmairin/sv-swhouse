@@ -1425,6 +1425,15 @@ ul, ol { list-style: none; }
   margin-top: var(--space-xs);
 }
 
+.bootcamp-detail__subtitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--color-accent);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 .bootcamp-detail__body p {
   font-size: 1.125rem;
   line-height: 1.8;
