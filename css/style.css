@@ -1244,8 +1244,21 @@ ul, ol { list-style: none; }
 
 .bootcamp__track-fill {
   height: 2px;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent) 62.5%, var(--color-border) 62.5%);
+  background: var(--color-border);
   border-radius: 2px;
+  position: relative;
+}
+
+.bootcamp__track-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--track-progress, 0%);
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: width 0.4s var(--ease-out);
 }
 
 .bootcamp__week-markers {
@@ -1259,6 +1272,11 @@ ul, ol { list-style: none; }
   font-size: 0.6875rem;
   color: var(--color-text-dim);
   text-align: center;
+  transition: color 0.3s var(--ease-out);
+}
+
+.bootcamp__week.lit {
+  color: var(--color-accent);
 }
 
 /* --- Phase cards --- */
@@ -1281,14 +1299,14 @@ ul, ol { list-style: none; }
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Build phase accent */
-.bootcamp__phase--2 {
+/* Active phase accent (scroll-driven) */
+.bootcamp__phase.active {
   border-color: var(--color-accent);
   box-shadow: 0 0 40px var(--color-accent-glow);
   position: relative;
 }
 
-.bootcamp__phase--2::before {
+.bootcamp__phase.active::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1323,17 +1341,29 @@ ul, ol { list-style: none; }
 }
 
 /* --- Sprint flow inside Build phase --- */
-.bootcamp__sprints {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-xs);
+.bootcamp__cycle {
   margin-top: var(--space-sm);
   padding-top: var(--space-sm);
   border-top: 1px solid var(--color-border);
 }
 
-.bootcamp__sprint {
+.bootcamp__cycle-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.bootcamp__cycle-loop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.bootcamp__cycle-step {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   letter-spacing: 0.05em;
@@ -1344,13 +1374,134 @@ ul, ol { list-style: none; }
   border: 1px solid var(--color-border);
 }
 
-.bootcamp__sprint-arrow {
+.bootcamp__cycle-arrow {
   color: var(--color-accent);
   font-size: 0.75rem;
 }
 
+.bootcamp__cycle-arrow--loop {
+  font-size: 1.125rem;
+}
+
 .bootcamp__cta {
   display: inline-flex;
+}
+
+/* ============================================
+   BOOTCAMP STANDALONE PAGE
+   ============================================ */
+
+.bootcamp-hero {
+  padding: calc(var(--nav-height) + var(--space-lg)) 0 var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bootcamp-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  margin-bottom: var(--space-md);
+  transition: color var(--duration-fast);
+}
+
+.bootcamp-hero__back:hover {
+  color: var(--color-accent);
+}
+
+.bootcamp-curriculum {
+  padding: var(--space-md) 0 var(--space-lg);
+}
+
+.bootcamp-details {
+  padding: 0 0 var(--space-md);
+}
+
+.bootcamp-detail {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bootcamp-detail:last-child {
+  border-bottom: none;
+}
+
+.bootcamp-detail__header {
+  margin-bottom: var(--space-md);
+}
+
+.bootcamp-detail__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+  margin-top: var(--space-xs);
+}
+
+.bootcamp-detail__subtitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--color-accent);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bootcamp-detail__body p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.bootcamp-detail__body ul {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+  padding-left: 1.5rem;
+}
+
+.bootcamp-detail__body li {
+  margin-bottom: 0.75rem;
+}
+
+.bootcamp-detail__body li::marker {
+  color: var(--color-accent);
+}
+
+.bootcamp-detail__body strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.bootcamp-cta {
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.bootcamp-cta__inner {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.bootcamp-cta__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: var(--space-sm);
+}
+
+.bootcamp-cta__body {
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+  margin-bottom: var(--space-md);
 }
 
 /* ============================================
@@ -1491,8 +1642,18 @@ ul, ol { list-style: none; }
     border-radius: 0 16px 16px 0;
   }
 
-  .bootcamp__phase--2 {
+  .bootcamp__phase.active {
     border-left-color: var(--color-accent);
+  }
+
+  /* Bootcamp standalone page */
+  .bootcamp-hero {
+    padding-top: calc(var(--nav-height) + var(--space-lg));
+  }
+
+  .bootcamp-detail__body p,
+  .bootcamp-detail__body ul {
+    font-size: 1.0625rem;
   }
 
   /* Footer: stack */
