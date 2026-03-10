@@ -1191,6 +1191,169 @@ ul, ol { list-style: none; }
 }
 
 /* ============================================
+   BOOTCAMP CURRICULUM
+   ============================================ */
+
+.bootcamp {
+  padding: var(--space-section) 0;
+}
+
+.bootcamp__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+.bootcamp__subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin-bottom: var(--space-md);
+}
+
+/* --- Differentiator pills --- */
+.bootcamp__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.bootcamp__pill {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-accent-glow);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+}
+
+/* --- Timeline track --- */
+.bootcamp__timeline {
+  margin-bottom: var(--space-lg);
+}
+
+.bootcamp__track {
+  margin-bottom: var(--space-md);
+}
+
+.bootcamp__track-fill {
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent) 62.5%, var(--color-border) 62.5%);
+  border-radius: 2px;
+}
+
+.bootcamp__week-markers {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  margin-top: var(--space-xs);
+}
+
+.bootcamp__week {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--color-text-dim);
+  text-align: center;
+}
+
+/* --- Phase cards --- */
+.bootcamp__phases {
+  display: grid;
+  grid-template-columns: 1.5fr 4fr 2fr 1.5fr;
+  gap: var(--space-sm);
+}
+
+.bootcamp__phase {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: var(--space-md);
+  transition: border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.bootcamp__phase:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Build phase accent */
+.bootcamp__phase--2 {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 40px var(--color-accent-glow);
+  position: relative;
+}
+
+.bootcamp__phase--2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+}
+
+.bootcamp__phase-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.bootcamp__phase-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.3;
+  margin-bottom: var(--space-xs);
+}
+
+.bootcamp__phase-body {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* --- Sprint flow inside Build phase --- */
+.bootcamp__sprints {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.bootcamp__sprint {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.25rem 0.625rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+
+.bootcamp__sprint-arrow {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+}
+
+.bootcamp__cta {
+  display: inline-flex;
+}
+
+/* ============================================
    ANIMATIONS (Reduced motion)
    ============================================ */
 
@@ -1314,6 +1477,24 @@ ul, ol { list-style: none; }
     grid-template-columns: 1fr;
   }
 
+  /* Bootcamp: stack phases vertically */
+  .bootcamp__track {
+    display: none;
+  }
+
+  .bootcamp__phases {
+    grid-template-columns: 1fr;
+  }
+
+  .bootcamp__phase {
+    border-left: 3px solid var(--color-border);
+    border-radius: 0 16px 16px 0;
+  }
+
+  .bootcamp__phase--2 {
+    border-left-color: var(--color-accent);
+  }
+
   /* Footer: stack */
   .footer__top {
     flex-direction: column;
@@ -1332,5 +1513,13 @@ ul, ol { list-style: none; }
 @media (min-width: 769px) and (max-width: 1024px) {
   .education__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bootcamp__phases {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bootcamp__phase--2 {
+    grid-column: 1 / -1;
   }
 }
