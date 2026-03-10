@@ -278,4 +278,92 @@
         });
     });
   }
+
+  // ==========================================
+  // 7. INTERNATIONALIZATION (i18n)
+  // ==========================================
+
+  var currentLang = localStorage.getItem('lang') || 'en';
+  var translations = null;
+
+  function applyTranslations(lang) {
+    if (lang === 'en') {
+      // Restore original English from data attributes
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        if (el.dataset.i18nOriginal !== undefined) {
+          el.innerHTML = el.dataset.i18nOriginal;
+        }
+      });
+      updateLangButtons('en');
+      document.documentElement.lang = 'en';
+      localStorage.setItem('lang', 'en');
+      currentLang = 'en';
+      return;
+    }
+
+    if (translations) {
+      swapText(translations);
+      return;
+    }
+
+    // Determine base path for i18n files
+    var base = '';
+    var scripts = document.querySelectorAll('script[src*="main.js"]');
+    if (scripts.length > 0) {
+      var src = scripts[0].getAttribute('src');
+      // If script src starts with ./ or ../ or js/, adjust base
+      if (src.indexOf('js/') === 0) {
+        base = '';
+      }
+    }
+
+    fetch(base + 'i18n/th.json')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        translations = data;
+        swapText(data);
+      })
+      .catch(function (err) {
+        console.warn('i18n: Could not load Thai translations', err);
+      });
+  }
+
+  function swapText(data) {
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.dataset.i18n;
+      if (data[key]) {
+        // Store original English HTML on first swap
+        if (el.dataset.i18nOriginal === undefined) {
+          el.dataset.i18nOriginal = el.innerHTML;
+        }
+        el.innerHTML = data[key];
+      }
+    });
+    updateLangButtons('th');
+    document.documentElement.lang = 'th';
+    localStorage.setItem('lang', 'th');
+    currentLang = 'th';
+  }
+
+  function updateLangButtons(lang) {
+    document.querySelectorAll('[data-lang]').forEach(function (btn) {
+      var isActive = btn.dataset.lang === lang;
+      btn.classList.toggle('footer__lang-btn--active', isActive);
+    });
+  }
+
+  // Language toggle click handlers
+  document.querySelectorAll('[data-lang]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var lang = btn.dataset.lang;
+      if (lang !== currentLang) {
+        applyTranslations(lang);
+      }
+    });
+  });
+
+  // Apply saved language on load
+  if (currentLang === 'th') {
+    applyTranslations('th');
+  }
 })();

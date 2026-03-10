@@ -480,7 +480,7 @@ ul, ol { list-style: none; }
 .problem {
   min-height: 300vh;
   position: relative;
-  padding-top: var(--space-section);
+  padding-top: var(--space-lg);
 }
 
 .problem__inner {
