@@ -113,121 +113,7 @@
   }
 
   // ==========================================
-  // 4. BOOTCAMP TIMELINE (Scroll-driven)
-  // ==========================================
-
-  const timeline = document.querySelector('.bootcamp__timeline');
-
-  if (timeline) {
-    const trackFill = timeline.querySelector('.bootcamp__track-fill');
-    const weeks = timeline.querySelectorAll('.bootcamp__week');
-    const phases = timeline.querySelectorAll('.bootcamp__phase');
-    // Phase boundaries as fractions of the 8-week track
-    // Phase 1: W1 (0–12.5%), Phase 2: W2–5 (12.5–62.5%), Phase 3: W6–7 (62.5–87.5%), Phase 4: W8 (87.5–100%)
-    const phaseBounds = [0.125, 0.625, 0.875, 1.0];
-
-    var maxProgress = 0;
-
-    function updateTimeline() {
-      const rect = timeline.getBoundingClientRect();
-      const vh = window.innerHeight;
-      // Start filling when timeline enters bottom of viewport,
-      // finish when it reaches top quarter
-      const start = vh;
-      const end = vh * 0.25;
-      const raw = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
-
-      // Only go forward, never backward
-      if (raw > maxProgress) maxProgress = raw;
-      var progress = maxProgress;
-
-      // Update track fill
-      if (trackFill) {
-        trackFill.style.setProperty('--track-progress', (progress * 100) + '%');
-      }
-
-      // Light up week markers
-      weeks.forEach(function (w, i) {
-        var threshold = (i + 1) / 8;
-        w.classList.toggle('lit', progress >= threshold);
-      });
-
-      // Activate phase card that the progress bar is currently in
-      var activeIdx = -1;
-      for (var p = 0; p < phaseBounds.length; p++) {
-        if (progress > (p === 0 ? 0 : phaseBounds[p - 1])) {
-          activeIdx = p;
-        }
-      }
-      phases.forEach(function (phase, i) {
-        phase.classList.toggle('active', i === activeIdx);
-      });
-    }
-
-    var timelineTicking = false;
-    window.addEventListener('scroll', function () {
-      if (!timelineTicking) {
-        requestAnimationFrame(function () {
-          updateTimeline();
-          timelineTicking = false;
-        });
-        timelineTicking = true;
-      }
-    }, { passive: true });
-
-    // Initial state
-    updateTimeline();
-  }
-
-  // ==========================================
-  // 5. ANIMATED COUNTERS (Metrics Section)
-  // ==========================================
-
-  const counters = document.querySelectorAll('.metrics__number');
-  let countersAnimated = false;
-
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.target, 10);
-    const duration = 1500;
-    const start = performance.now();
-
-    function tick(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(eased * target);
-
-      el.textContent = current;
-
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      }
-    }
-
-    requestAnimationFrame(tick);
-  }
-
-  if (counters.length > 0) {
-    const metricsObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !countersAnimated) {
-            countersAnimated = true;
-            counters.forEach(animateCounter);
-            metricsObserver.disconnect();
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    const metricsSection = document.getElementById('metrics');
-    if (metricsSection) metricsObserver.observe(metricsSection);
-  }
-
-  // ==========================================
-  // 6. CONTACT FORM (Google Sheet via Apps Script)
+  // 4. CONTACT FORM (Google Sheet via Apps Script)
   // ==========================================
 
   const form = document.getElementById('contact-form');
@@ -292,7 +178,7 @@
   }
 
   // ==========================================
-  // 7. INTERNATIONALIZATION (i18n)
+  // 5. INTERNATIONALIZATION (i18n)
   // ==========================================
 
   var currentLang = localStorage.getItem('lang') || 'en';
