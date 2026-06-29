@@ -424,54 +424,6 @@ ul, ol { list-style: none; }
   50% { opacity: 1; transform: scaleY(1.2); }
 }
 
-/* ============================================
-   CREDIBILITY BAR
-   ============================================ */
-
-.credibility {
-  padding: var(--space-lg) 0;
-  background: var(--color-bg-elevated);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.credibility__row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) 0;
-}
-
-.credibility__label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-dim);
-}
-
-.credibility__logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-sm) var(--space-lg);
-}
-
-.credibility__logo {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.9375rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.02em;
-}
-
-.credibility__divider {
-  height: 1px;
-  background: var(--color-border);
-  margin: var(--space-sm) 0;
-}
 
 /* ============================================
    PROBLEM (Sticky Scroll)
@@ -884,19 +836,7 @@ ul, ol { list-style: none; }
    LOGO IMAGES
    ============================================ */
 
-.credibility__logo-img {
-  height: 22px;
-  width: auto;
-  opacity: 0.6;
-  transition: opacity var(--duration-fast);
-}
-
-.credibility__logo-img:hover {
-  opacity: 1;
-}
-
 /* Raw SVGs from jsdelivr are black — invert to white */
-.credibility__logo-img--raw,
 .team__logo-img--raw {
   filter: brightness(0) invert(1);
 }
@@ -1159,22 +1099,6 @@ ul, ol { list-style: none; }
   color: var(--color-text);
 }
 
-.footer__social {
-  display: flex;
-  gap: var(--space-sm);
-}
-
-.footer__social a {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--color-text-dim);
-  transition: color var(--duration-fast);
-}
-
-.footer__social a:hover {
-  color: var(--color-accent);
-}
-
 .footer__bottom {
   display: flex;
   align-items: center;
@@ -1348,10 +1272,6 @@ ul, ol { list-style: none; }
   .cta__form {
     flex-direction: column;
   }
-
-  /* Cursor: hide on mobile */
-  .cursor { display: none !important; }
-  body { cursor: auto !important; }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
