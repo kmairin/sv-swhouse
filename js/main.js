@@ -227,54 +227,66 @@
   }
 
   // ==========================================
-  // 6. WAITLIST FORM (Google Form Integration)
+  // 6. CONTACT FORM (Google Sheet via Apps Script)
   // ==========================================
 
-  const form = document.getElementById('waitlist-form');
+  const form = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
 
   if (form) {
     // -------------------------------------------------------
-    // CONFIGURE: Replace these with your Google Form values
-    // 1. Create a Google Form with one "Email" field
-    // 2. Get the form action URL (inspect form HTML or use pre-filled link)
-    // 3. Get the entry field name (e.g., entry.123456789)
+    // CONFIGURE: paste your Google Apps Script Web App URL here.
+    // Submissions are appended as a row to your Google Sheet.
+    // Setup steps: see README.md ("Contact Form → Google Sheet").
+    // Leave empty to run in placeholder mode (form shows success
+    // but does not send anywhere yet).
     // -------------------------------------------------------
-    const GOOGLE_FORM_URL = ''; // e.g., 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse'
-    const GOOGLE_FORM_EMAIL_FIELD = ''; // e.g., 'entry.123456789'
+    const GOOGLE_SHEET_ENDPOINT = ''; // e.g. 'https://script.google.com/macros/s/AKfy.../exec'
 
-    form.addEventListener('submit', (e) => {
+    function setStatus(message, kind) {
+      formStatus.textContent = message;
+      formStatus.className = 'cta__status' + (kind ? ' cta__status--' + kind : '');
+    }
+
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const email = form.querySelector('.cta__input').value;
+      const data = new FormData(form);
+      const name = (data.get('name') || '').toString().trim();
+      const email = (data.get('email') || '').toString().trim();
+      const message = (data.get('message') || '').toString().trim();
 
-      if (!email) return;
-
-      if (!GOOGLE_FORM_URL) {
-        // Placeholder mode — show success without submitting
-        formStatus.textContent = 'Thank you! We\'ll be in touch soon.';
-        formStatus.className = 'cta__status cta__status--success';
-        form.querySelector('.cta__input').value = '';
+      // Name, email, and message are required; company is optional.
+      if (!name || !email || !message) {
+        setStatus('Please fill in your name, email, and message.', 'error');
         return;
       }
 
-      // Submit to Google Form
-      const formData = new FormData();
-      formData.append(GOOGLE_FORM_EMAIL_FIELD, email);
+      if (!GOOGLE_SHEET_ENDPOINT) {
+        // Placeholder mode — not yet wired to a Google Sheet.
+        setStatus('Thanks! Your message has been received. We\'ll be in touch soon.', 'success');
+        form.reset();
+        return;
+      }
 
-      fetch(GOOGLE_FORM_URL, {
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      setStatus('Sending…', '');
+
+      fetch(GOOGLE_SHEET_ENDPOINT, {
         method: 'POST',
         mode: 'no-cors',
-        body: formData,
+        body: data,
       })
-        .then(() => {
-          formStatus.textContent = 'Thank you! We\'ll be in touch soon.';
-          formStatus.className = 'cta__status cta__status--success';
-          form.querySelector('.cta__input').value = '';
+        .then(function () {
+          setStatus('Thanks! Your message has been sent. We\'ll be in touch soon.', 'success');
+          form.reset();
         })
-        .catch(() => {
-          formStatus.textContent = 'Something went wrong. Please try again.';
-          formStatus.className = 'cta__status cta__status--error';
+        .catch(function () {
+          setStatus('Something went wrong. Please try again or email us directly.', 'error');
+        })
+        .finally(function () {
+          if (submitBtn) submitBtn.disabled = false;
         });
     });
   }
@@ -292,6 +304,12 @@
       document.querySelectorAll('[data-i18n]').forEach(function (el) {
         if (el.dataset.i18nOriginal !== undefined) {
           el.innerHTML = el.dataset.i18nOriginal;
+        }
+      });
+      // Restore original English placeholders
+      document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+        if (el.dataset.i18nPhOriginal !== undefined) {
+          el.setAttribute('placeholder', el.dataset.i18nPhOriginal);
         }
       });
       updateLangButtons('en');
@@ -337,6 +355,16 @@
           el.dataset.i18nOriginal = el.innerHTML;
         }
         el.innerHTML = data[key];
+      }
+    });
+    // Translate input/textarea placeholders
+    document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+      var phKey = el.dataset.i18nPh;
+      if (data[phKey]) {
+        if (el.dataset.i18nPhOriginal === undefined) {
+          el.dataset.i18nPhOriginal = el.getAttribute('placeholder') || '';
+        }
+        el.setAttribute('placeholder', data[phKey]);
       }
     });
     updateLangButtons('th');

@@ -56,7 +56,7 @@
         <a href="blog/" class="nav__link" data-i18n="nav.blog">Blog</a>
         <a href="#cta" class="nav__link" data-i18n="nav.contact">Contact</a>
       </nav>
-      <a href="#cta" class="nav__cta btn btn--primary" data-i18n="nav.cta">Join Waitlist</a>
+      <a href="#cta" class="nav__cta btn btn--primary" data-i18n="nav.cta">Get in Touch</a>
       <button class="nav__burger" id="nav-burger" aria-label="Toggle menu">
         <span></span>
         <span></span>
@@ -86,7 +86,7 @@
           Robinhood Markets, OpenAI &mdash; returning home to raise Thailand's technology and product development standard.
         </p>
         <div class="hero__ctas">
-          <a href="#cta" class="btn btn--primary" data-i18n="hero.cta.primary">Join the Waitlist</a>
+          <a href="#cta" class="btn btn--primary" data-i18n="hero.cta.primary">Get in Touch</a>
           <a href="#software" class="btn btn--ghost" data-i18n="hero.cta.secondary">See What We Build &rarr;</a>
         </div>
       </div>
@@ -469,25 +469,53 @@
       </div>
     </section>
 
-    <!-- ========== EMAIL WAITLIST CTA ========== -->
+    <!-- ========== CONTACT CTA ========== -->
     <section class="cta" id="cta">
       <div class="container">
-        <h2 class="cta__title reveal" data-i18n="cta.title">Be First. This Is Limited.</h2>
+        <h2 class="cta__title reveal" data-i18n="cta.title">Let's Build Something Great.</h2>
         <p class="cta__subtitle reveal" data-i18n="cta.subtitle">
-          Our first executive cohort and software partnerships are limited
-          to 10 clients each. Join the waitlist and we'll reach out personally.
+          Tell us about your project, your team, or the program you're interested in &mdash;
+          and we'll get back to you personally.
         </p>
-        <form class="cta__form reveal" id="waitlist-form">
+        <form class="cta__form cta__form--contact reveal" id="contact-form">
+          <input
+            type="text"
+            name="name"
+            class="cta__input"
+            placeholder="Your name"
+            required
+            aria-label="Name"
+            data-i18n-ph="cta.ph.name"
+          >
           <input
             type="email"
+            name="email"
             class="cta__input"
             placeholder="your@company.com"
             required
-            aria-label="Email address"
+            aria-label="Email"
+            data-i18n-ph="cta.ph.email"
           >
-          <button type="submit" class="btn btn--primary cta__btn" data-i18n="cta.button">Reserve Your Spot</button>
+          <input
+            type="text"
+            name="company"
+            class="cta__input"
+            placeholder="Company (optional)"
+            aria-label="Company"
+            data-i18n-ph="cta.ph.company"
+          >
+          <textarea
+            name="message"
+            class="cta__input cta__textarea"
+            placeholder="How can we help? Tell us about your project, team, or which program you're interested in."
+            rows="4"
+            required
+            aria-label="Message"
+            data-i18n-ph="cta.ph.message"
+          ></textarea>
+          <button type="submit" class="btn btn--primary cta__btn" data-i18n="cta.button">Send Message</button>
         </form>
-        <p class="cta__fine-print reveal" data-i18n="cta.fine_print">No spam. No noise. Just a direct message from us when we're ready for you.</p>
+        <p class="cta__fine-print reveal" data-i18n="cta.fine_print">No spam. No noise. Just a direct reply from our team.</p>
         <p class="cta__status" id="form-status" aria-live="polite"></p>
       </div>
     </section>

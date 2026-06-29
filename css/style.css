@@ -1015,6 +1015,13 @@ ul, ol { list-style: none; }
   position: relative;
 }
 
+/* Multi-field contact form: stacked layout */
+.cta__form--contact {
+  flex-direction: column;
+  max-width: 540px;
+  text-align: left;
+}
+
 .cta__input {
   flex: 1;
   font-family: var(--font-display);
@@ -1026,6 +1033,24 @@ ul, ol { list-style: none; }
   color: var(--color-text);
   outline: none;
   transition: border-color var(--duration-fast);
+}
+
+/* In the stacked contact form, fields fill the width instead of growing vertically */
+.cta__form--contact .cta__input {
+  flex: none;
+  width: 100%;
+}
+
+.cta__textarea {
+  border-radius: 20px;
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.5;
+}
+
+.cta__form--contact .cta__btn {
+  width: 100%;
+  margin-top: var(--space-xs);
 }
 
 .cta__input:focus {
