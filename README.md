@@ -1,6 +1,6 @@
-# Silicon Valley Software House
+# SV & CO
 
-Landing page for Silicon Valley Software House — a team of Silicon Valley engineers returning to Thailand.
+Landing page for SV & CO — a team of Silicon Valley engineers returning to Thailand.
 
 ## Development
 
