@@ -594,8 +594,9 @@
 
 /* Photo hero banner (graceful gradient fallback if the image is missing) */
 .article-hero--photo {
+  height: clamp(260px, 34vw, 420px);
   background-size: cover;
-  background-position: center;
+  background-position: center 25%;
   background-repeat: no-repeat;
 }
 
@@ -645,6 +646,7 @@
   border-radius: 16px;
   border: 1px solid var(--color-border);
   background: var(--color-bg-elevated) center / cover no-repeat;
+  background-position: center 22%;
 }
 
 .founder-card__content {
