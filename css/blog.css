@@ -629,3 +629,55 @@
 .blog-landing__card-hero--announcement::before {
   border-color: rgba(0, 229, 160, 0.15);
 }
+
+/* Founder cards (press release bios: headshot + quote + bio) */
+.founder-card {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  margin: 2.5rem 0;
+}
+
+.founder-card__photo {
+  flex-shrink: 0;
+  width: 128px;
+  height: 128px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-elevated) center / cover no-repeat;
+}
+
+.founder-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.founder-card__content h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem;
+}
+
+.founder-card__quote {
+  font-size: 1.0625rem !important;
+  font-style: italic;
+  color: var(--color-text) !important;
+  border-left: 2px solid var(--color-accent);
+  padding-left: 1rem;
+  margin: 0 0 1rem !important;
+}
+
+.founder-card__content p:last-child {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .founder-card {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .founder-card__photo {
+    width: 96px;
+    height: 96px;
+  }
+}
