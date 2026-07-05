@@ -583,3 +583,49 @@
     font-size: 2.5rem;
   }
 }
+
+/* ============================================
+   Announcement / Press Release articles + photos
+   ============================================ */
+
+.article-hero[data-topic="announcement"] {
+  background: linear-gradient(160deg, #080808 0%, #0a1e2e 30%, #12082a 60%, #0a2818 100%);
+}
+
+/* Photo hero banner (graceful gradient fallback if the image is missing) */
+.article-hero--photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Inline article figures (photos with captions) */
+.article-figure {
+  margin: 2.5rem 0;
+}
+
+.article-figure__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-elevated) center / cover no-repeat;
+}
+
+.article-figure figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-text-dim);
+  text-align: center;
+}
+
+/* Announcement card on the blog landing page */
+.blog-landing__card-hero--announcement {
+  background: linear-gradient(135deg, #0a1e2e 0%, #12082a 50%, #0a2818 100%);
+}
+
+.blog-landing__card-hero--announcement::before {
+  border-color: rgba(0, 229, 160, 0.15);
+}
